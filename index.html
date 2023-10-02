@@ -58,12 +58,12 @@
         
         .navbar .menu{
             display: grid;
-            grid-template-rows: repeat(2,1fr);
+            grid-template-rows: repeat(2,auto);
             place-items: center;
             position: absolute;
             top:-240px; left: 0;
             width: 100%;
-            height: 240px;
+            height: 200px;
             background-color: #fff;
             box-shadow: 0 20px 35px rgba(86,86,86,0.1);
             transition: 800ms ease-in-out;
@@ -76,11 +76,11 @@
             justify-content: center;
             align-items: center;
             gap: 2em;
-            height: 200px;
+            height: 150px;
         }
 
         .links a{
-            font-size: 1.4rem;
+            font-size: 1.6rem;
         }
 
         .brand, .brand-mobile{
@@ -89,37 +89,39 @@
             font-size: 1.8rem;
             display: block;
         }
+        
+        .brand{
+                display: none;
+        }
 
         .nav-btn{
                 display: block;
                 border: none;
-                font-size: 1.5em;
+                font-size: 1.8rem;
                 cursor: pointer;
-
+                background-color: transparent;
         }
+
 
         .navbar .container{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                
-            }
+        }
 
         .social{
-            /* justify-self: right; */
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
-            width: 30%;
-            height: 40px;
+            align-items: center;
+            width: 40%;
+            height: 50px;
         }
 
         .social a{
-            font-size: 1.4rem;
+            font-size: 1.8rem;
         }
-
         
-
         .hero{
             display: grid;
             grid-template-columns: 100%;
@@ -129,32 +131,27 @@
             min-height: calc( 100vh - 101px);
 
         }
-
         
-
         .profile-img{
             background: url('./img/home_1.png') no-repeat center;
             background-size: contain;
-            width:300px;
-            height:100%;
+            width: 90%;
+            height:250px;
             
         }   
-        
-        
-
+       
         .hero img{
             width: 90%;
             max-width: 400px;
         }
 
         .hero-details{
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
         }
 
-
+        
         .hero h1{
             font-weight: 400;
             font-size: 3.6rem;
@@ -162,7 +159,7 @@
         }
 
         
-
+        
         .hero h1 span{
             font-weight: bold;
             position: relative;
@@ -240,7 +237,7 @@
 
         .video-btn button::after{
             background-color: #e33c3c;
-            animation: pulse1 .8s ease-out forwards infinite ;
+            animation: pulse2 .8s ease-out forwards infinite ;
         }
 
         .modal{
@@ -270,9 +267,6 @@
         .navbar .menu-open{
                 top: 60px;
         }
-
-        
-
 
         @keyframes pulse1{
             40%{
@@ -321,33 +315,92 @@
             }
         }
 
-        @media only screen and (max-width:880px){
-            
-            
+      @media only screen and (min-width:480px) and (max-width:768px) {
+            .hero{
+                grid-template-columns: 50% 50%;
+                align-items: center;
+                grid-template-rows: auto;
+            }
 
-           
+            .profile-img {
+                height: 350px;
+            }
+      }
 
-           
+      @media only screen and (min-width:769px) and (max-width:992px) {
+            .hero{
+                grid-template-columns: 50% 50%;
+                align-items: center;
+                grid-template-rows: auto;
+            }
 
-            
+            .profile-img {
+                height: 350px;
+            }
 
-            
-
-            .brand{
+            .nav-btn{
                 display: none;
             }
 
+            .brand-mobile{
+                display: none;
+            }
+
+            .brand{
+                display: block;
+            }
+
+            .navbar .menu{
+                top:0;
+                height: auto;
+                grid-template-columns: 30% 50% 20%;
+                grid-template-rows: 61px;
+            }
+
+            .links{
+                flex-direction: row;
+            }
             
-
-           
-        }
-       
+      }
       
+      @media only screen and (min-width:993px) {
+            .hero{
+                grid-template-columns: 50% 50%;
+                align-items: center;
+                grid-template-rows: auto;
+            }
 
+            .profile-img {
+                height: 350px;
+            }
 
+            .nav-btn{
+                display: none;
+            }
 
+            .brand-mobile{
+                display: none;
+            }
 
+            .brand{
+                display: block;
+            }
 
+            .navbar .menu{
+                top:0;
+                height: auto;
+                grid-template-columns: 30% 50% 20%;
+                grid-template-rows: 61px;
+            }
+
+            .links{
+                flex-direction: row;
+            }
+            
+      }
+      
+     
+       
     </style>
 
 </head>
@@ -359,7 +412,7 @@
                 <div class="menu">
                     <div class="links">
                         <a href="">About</a>
-                        <a href="">Portafolio</a>
+                        <a href="https://universitarioroy.github.io/challenge-rest-api-contries/?fbclid=IwAR2_XxxlGwGAa3im8n_7efR1vG6P04jOIjyRoSkfm4aPffekxJy7Ol0LbiA">Portafolio</a>
                         <a href="">Contacto</a>
                     </div>
                     <a href="#" class="brand">Edgar Roy Huaman</a>
@@ -418,7 +471,7 @@
          const video=document.querySelector("video");
 
          openModalBtn.addEventListener('click',()=>{
-            modal.style.animation="fadeIn 500ms";
+            modal.style.animation="fadeIn 2000ms";
             modal.showModal();
             video.play();
          })      
